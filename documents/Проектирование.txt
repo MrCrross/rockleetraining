@@ -1,0 +1,5 @@
+https://wireframe.cc/DjXRCR - главная с входом
+https://wireframe.cc/NH2P82 - админка добавление тренировки
+https://wireframe.cc/NhU47r - вход
+https://wireframe.cc/Vel9SM - регистрация
+https://wireframe.cc/jdC6Mj - админка редактирование тренировок
