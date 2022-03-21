@@ -32,6 +32,12 @@ $active = 'border-bottom border-2 pb-1 border-light';
         </a>
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li>
+                <a href="/trainings" class="nav-link px-2 link-light
+                            <?php if ($route === '/trainings') echo $active; ?>">
+                    Мои тренировки
+                </a>
+            </li>
+            <li>
                 <a href="/admin/users/create" class="nav-link px-2 link-light
                     <?php if (strpos($route, 'admin')) echo $active; ?>">
                     Панель администратора
