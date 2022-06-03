@@ -26,6 +26,11 @@ class View
         require_once 'Views/Layouts/' . $this->layout . '.php';
     }
 
+    public function json($data=[]){
+        header("Content-Type: application/json");
+        echo json_encode($data);
+    }
+
     public static function errors($code)
     {
         http_response_code($code);

@@ -10,6 +10,7 @@ use Models\Exercise;
 use Models\ExerciseType;
 use Models\Training;
 use Models\TrainingType;
+use Models\UserExecution;
 use Models\UserTraining;
 use Throwable;
 
@@ -31,6 +32,34 @@ class TrainingController extends Controller
             'trainings' => UserTraining::with('training.exercises.exerciseType', 'training.trainingType')
                 ->where('user_id', Auth::user()->id)
                 ->get(),
+        ]);
+    }
+    public function track()
+    {
+        $id = $_POST['id'];
+        $this->view->render('trainings/track', [
+            'training' => Training::with('exercises.exerciseType', 'trainingType')
+                ->where('id', $id)
+                ->first(),
+        ]);
+    }
+    public function order()
+    {
+        $this->view->render('trainings/order', [
+            'trainings' => UserExecution::with('training.trainingType')->where('user_id',Auth::user()->id)->get()
+        ]);
+    }
+    public function execution(){
+        $id = $_POST['id'];
+        $user = Auth::user()->id;
+        UserExecution::create([
+            'training_id'=>$id,
+            'user_id'=>$user,
+            'execution'=>date('Y-m-d')
+        ]);
+        $training = Training::find($id);
+        $this->view->json([
+            'message'=>'Тренировка '.$training->name." окочена!"
         ]);
     }
 

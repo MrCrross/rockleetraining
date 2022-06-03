@@ -1,3 +1,13 @@
+<div class="text-center w-100">
+    <h5 class="h5 mb-2">
+        Отчет о пройденных тренировках
+        <a href="/my_trainings/order"
+           title="Отчет о пройденных тренировках"
+           class=" btn btn-outline-success p-1">Построить </a>
+    </h5>
+
+</div>
+
 <?php if (isset($trainings) and count($trainings) !== 0): ?>
     <?php foreach ($trainings as $training): ?>
         <div class="accordion m-2 rounded-2" id="accordion<?php echo $training->training->id; ?>">
@@ -10,6 +20,11 @@
                                 aria-expanded="true" aria-controls="collapse<?php echo $training->training->id; ?>">
                             <?php echo $training->training->trainingType->name . ': ' . $training->training->name; ?>
                         </button>
+                        <form action="/my_trainings/track" method="post" class="d-flex">
+                            <input type="text" name="id" value="<?php echo $training->training->id; ?>" readonly
+                                   hidden>
+                            <button class="btn btn-outline-info" type="submit">Приступить</button>
+                        </form>
                         <form action="/api/trainings/deleteMy" method="post" class="d-flex">
                             <input type="text" name="id" value="<?php echo $training->training->id; ?>" readonly
                                    hidden>

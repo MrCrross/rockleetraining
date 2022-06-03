@@ -32,4 +32,8 @@ class Training extends Model
     {
         return $this->hasMany(UserTraining::class)->where('user_id',Auth::user()->id);
     }
+    public function userExecutions()
+    {
+        return $this->hasMany(UserExecution::class)->where('user_id',Auth::user()->id);
+    }
 }

@@ -44,6 +44,14 @@ return [
         'controller' => 'TrainingController',
         'action' => 'my'
     ],
+    'my_trainings/track'=>[
+        'controller' => 'TrainingController',
+        'action' => 'track'
+    ],
+    'my_trainings/order'=>[
+        'controller' => 'TrainingController',
+        'action' => 'order'
+    ],
 
     // Админка
 
@@ -159,7 +167,10 @@ return [
         'controller' => 'ExerciseTypeController',
         'action' => 'delete'
     ],
-
+    'api/execution' => [
+        'controller' => 'TrainingController',
+        'action' => 'execution'
+    ],
     //Миграции
     'admin/migrate/fresh' => [
         'controller' => 'MigrateController',

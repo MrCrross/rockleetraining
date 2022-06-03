@@ -21,6 +21,8 @@ return [
         'api/logout',
         'trainings',
         'my_trainings',
+        'my_trainings/track',
+        'my_trainings/order',
         'trainings/create',
         'trainings/edit',
         'api/trainings/insertMy',
@@ -33,7 +35,8 @@ return [
         'admin/migrate/fresh',
         'admin/migrate/freshAndSeed',
         'admin/migrate',
-        'admin/migrateAndSeed'
+        'admin/migrateAndSeed',
+        'api/execution'
     ],
     'admin'=>[
         '',
@@ -42,6 +45,9 @@ return [
         'training\d{1,}',
         'trainings',
         'my_trainings',
+        'my_trainings/track',
+        'my_trainings/order',
+        'api/execution',
         'api/trainings/insertMy',
         'api/trainings/deleteMy',
         'admin',

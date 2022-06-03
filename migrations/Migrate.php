@@ -19,6 +19,7 @@ class Migrate
         $this->migrations['trainings'] = new CreateTrainingsTable;
         $this->migrations['exercises'] = new CreateExercisesTable;
         $this->migrations['user_trainings'] = new CreateUserTrainingsTable;
+        $this->migrations['user_executions'] = new CreateUserExecutionsTable;
         $this->seed = new DatabaseSeeder;
     }
 

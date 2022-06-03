@@ -59,6 +59,12 @@ $active = 'border-bottom border-2 pb-1 border-light';
                         </a>
                     </li>
                     <li>
+                        <a href="/my_trainings" class="nav-link px-2 link-light
+                            <?php if ($route === '/my_trainings') echo $active; ?>">
+                            Занятия
+                        </a>
+                    </li>
+                    <li>
                         <a href="/admin/users/create" class="nav-link px-2 link-light">
                             Панель администратора
                         </a>
